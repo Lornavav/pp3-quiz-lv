@@ -102,8 +102,25 @@ def new_game():
 
     print(f"{USER_NAME} you scored {CORRECT_ANSWERS} out of {len(questions)}.")
 
-    # update_leaderboard()
+    update_leaderboard()
     # game_over()
 
 
-# main_menu()
+"""
+Function to update google sheet with user name and
+score.
+"""
+
+
+def update_leaderboard():
+    """
+    Update the worksheet with the user name and their final points.
+    """
+    data = USER_NAME, CORRECT_ANSWERS
+    print("Updating leaderboard...")
+    leaderboard_sheet = SHEET.worksheet("main")
+    leaderboard_sheet.append_row(data)
+    print("Leaderboard updated successfully.")
+
+
+main_menu()
