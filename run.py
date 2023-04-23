@@ -123,4 +123,27 @@ def update_leaderboard():
     print("Leaderboard updated successfully.")
 
 
+"""
+Asks the user if they want to play again,
+While loop with nestled if/else statements to handle
+each option and invalid entries.
+"""
+
+
+def game_over():
+    play_again = input("Do you want to play again? Enter Y/N: ").lower()
+
+    while True:
+        if play_again not in ["y", "n"]:
+            play_again = input(
+                "Not a valid option. Enter Y/N: ").lower()
+            continue
+        else:
+            if play_again == "y":
+                new_game()
+            else:
+                print("Goodbye! Thank you for playing!")
+            break
+
+         
 main_menu()
