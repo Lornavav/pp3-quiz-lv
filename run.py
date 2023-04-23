@@ -1,6 +1,7 @@
 from questions import questions
 import gspread
 from google.oauth2.service_account import Credentials
+import os
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -18,6 +19,11 @@ SHEET = GSPREAD_CLIENT.open("quiz-leaderboard")
 # data = main.get_all_values()
 # print(data)
 
+
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
+
+
 """
 Function to load main menu, error handling if correct option
 is not selected. Option to quit the game and break out of loop.
@@ -28,13 +34,13 @@ def main_menu():
     print("1. Start Quiz")
     print("2. Instructions")
     print("3. Leaderboard")
-    print("4. Quit")
+    print("4. Quit\n")
     while True:
         try:
             selection = int(input("Enter option: \n"))
             if selection == 1:
+                clear()
                 new_game()
-                break
             elif selection == 2:
                 print("The game is simple, read the questions..")
                 print("Decide on your answer..")
@@ -68,11 +74,11 @@ def new_game():
     USER_NAME = input("Please enter your name to start quiz: \n")
 
     if USER_NAME == "":
-        print("You must enter your name to begin!")
+        print("\nYou must enter your name to begin!")
         new_game()
     else:
-        print(f"Welcome {USER_NAME}. Best of luck!")
-
+        print(f"\nWelcome {USER_NAME}. Best of luck!\n")
+    
     global CORRECT_ANSWERS
 
     CORRECT_ANSWERS = 0
