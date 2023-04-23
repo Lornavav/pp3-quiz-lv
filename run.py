@@ -33,3 +33,59 @@ def main_menu():
         except ValueError:
             print("Invalid option. Enter 1-4")
     exit()
+
+
+"""
+Function to run the quiz, includes user name input,
+A for loop to iterate through the questions and options,
+A while loop to catch any incalid enteries, if/else statement
+to match user input with answers and increase score.
+"""
+
+
+def new_game():
+
+    global USER_NAME
+
+    USER_NAME = input("Please enter your name to start quiz: ")
+
+    if USER_NAME == "":
+        print("You must enter your name to begin!")
+        new_game()
+    else:
+        print(f"Welcome {USER_NAME}. Best of luck!")
+
+    global CORRECT_ANSWERS
+
+    CORRECT_ANSWERS = 0
+
+    for question in questions:
+        print(question["question"])
+
+        for i, option in enumerate(question["options"]):
+            print(i+1, option)
+
+        user_answer = (input("Enter 1, 2, 3, 4: "))
+
+        while True:
+            if user_answer not in ["1", "2", "3", "4"]:
+                user_answer = (input(
+                    "You can only enter 1, 2, 3 or 4. Try again: "))
+                continue
+            else:
+                break
+
+        user_input = int(user_answer)
+        if question["options"][user_input-1] == question["answer"]:
+            CORRECT_ANSWERS += 1
+            print("Correct!")
+        else:
+            print("Incorrect! The correct answer is", question["answer"])
+
+    print(f"{USER_NAME} you scored {CORRECT_ANSWERS} out of {len(questions)}.")
+
+    # update_leaderboard()
+    # game_over()
+
+
+main_menu()
