@@ -13,10 +13,10 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("quiz-leaderboard")
 
-main = SHEET.worksheet("main")
+# main = SHEET.worksheet("main")
 
-data = main.get_all_values()
-print(data)
+# data = main.get_all_values()
+# print(data)
 
 """
 Function to load main menu, error handling if correct option
@@ -31,7 +31,7 @@ def main_menu():
     print("4. Quit")
     while True:
         try:
-            selection = int(input("Enter option: "))
+            selection = int(input("Enter option: \n"))
             if selection == 1:
                 new_game()
                 break
@@ -65,7 +65,7 @@ def new_game():
 
     global USER_NAME
 
-    USER_NAME = input("Please enter your name to start quiz: ")
+    USER_NAME = input("Please enter your name to start quiz: \n")
 
     if USER_NAME == "":
         print("You must enter your name to begin!")
@@ -88,7 +88,7 @@ def new_game():
         while True:
             if user_answer not in ["1", "2", "3", "4"]:
                 user_answer = (input(
-                    "You can only enter 1, 2, 3 or 4. Try again: "))
+                    "You can only enter 1, 2, 3 or 4. Try again: \n"))
                 continue
             else:
                 break
@@ -103,7 +103,7 @@ def new_game():
     print(f"{USER_NAME} you scored {CORRECT_ANSWERS} out of {len(questions)}.")
 
     update_leaderboard()
-    # game_over()
+    game_over()
 
 
 """
@@ -136,7 +136,7 @@ def game_over():
     while True:
         if play_again not in ["y", "n"]:
             play_again = input(
-                "Not a valid option. Enter Y/N: ").lower()
+                "Not a valid option. Enter Y/N: \n").lower()
             continue
         else:
             if play_again == "y":
@@ -145,5 +145,5 @@ def game_over():
                 print("Goodbye! Thank you for playing!")
             break
 
-         
+
 main_menu()
