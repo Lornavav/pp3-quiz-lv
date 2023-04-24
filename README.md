@@ -83,3 +83,33 @@ The flowchart was created and used to map out the user journey. This helped make
 * I would like to include more questions and import them from an API or storage in google sheets and then have them pulled in at random so that the same user can play 
   the game over and over and not get bored and not get too familiar with the answers.
 
+## Testing
+
+### CI Python Linter Testing
+
+All clear no errors found 
+
+#### Add screenshot when all code is complete
+
+### Manual testing based on user stories
+
+#### Add table with feature, expect, action, result
+
+### Lighthouse testing
+
+## Unfixed Bugs
+
+## Deployment
+
+### Heroku deployment
+
+### Fork repository
+
+## Technologies Used
+
+### Languages
+
+### Frameworks and Tools
+
+## Credits
+
