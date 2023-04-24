@@ -37,15 +37,16 @@ def main_menu():
     print("4. Quit\n")
     while True:
         try:
-            selection = int(input("Enter option: \n"))
+            selection = int(input("\nEnter option: \n"))
             if selection == 1:
                 clear()
                 new_game()
+                break
             elif selection == 2:
-                print("The game is simple, read the questions..")
-                print("Decide on your answer..")
-                print("Input your answer using option 1, 2, 3, 4.")
-                print("Best of luck!")
+                print("\nThe game is simple, read the questions..")
+                print("\nDecide on your answer..")
+                print("\nInput your answer using option 1, 2, 3, 4.")
+                print("\nBest of luck!")
             elif selection == 3:
                 pass
             elif selection == 4:
@@ -78,7 +79,7 @@ def new_game():
         new_game()
     else:
         print(f"\nWelcome {USER_NAME}. Best of luck!\n")
-    
+
     global CORRECT_ANSWERS
 
     CORRECT_ANSWERS = 0
@@ -102,9 +103,9 @@ def new_game():
         user_input = int(user_answer)
         if question["options"][user_input-1] == question["answer"]:
             CORRECT_ANSWERS += 1
-            print("Correct!")
+            print("\nCorrect!")
         else:
-            print("Incorrect! The correct answer is", question["answer"])
+            print("\nIncorrect! The correct answer is", question["answer"])
 
     print(f"{USER_NAME} you scored {CORRECT_ANSWERS} out of {len(questions)}.")
 
