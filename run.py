@@ -50,13 +50,13 @@ def main_menu():
             elif selection == 3:
                 pass
             elif selection == 4:
-                print("Sorry to see you go! Come back soon!")
+                print("\nSorry to see you go! Come back soon!")
                 break
             else:
-                print("Invalid option. Enter 1-4")
+                print("\nInvalid option. Enter 1-4")
                 main_menu()
         except ValueError:
-            print("Invalid option. Enter 1-4")
+            print("\nInvalid option. Enter 1-4")
     exit()
 
 
@@ -72,7 +72,7 @@ def new_game():
 
     global USER_NAME
 
-    USER_NAME = input("Please enter your name to start quiz: \n")
+    USER_NAME = input("\nPlease enter your name to start quiz: \n")
 
     if USER_NAME == "":
         print("\nYou must enter your name to begin!")
@@ -95,7 +95,7 @@ def new_game():
         while True:
             if user_answer not in ["1", "2", "3", "4"]:
                 user_answer = (input(
-                    "You can only enter 1, 2, 3 or 4. Try again: \n"))
+                    "\nYou can only enter 1, 2, 3 or 4. Try again: \n"))
                 continue
             else:
                 break
