@@ -37,4 +37,49 @@ To allow users to enjoy a simple quiz game. They can have as many chances as the
 
 ### Flowchart
 
-![]()
+![](documentation/images/flowchart.png)
+
+The flowchart was created and used to map out the user journey. This helped make sure that the user always has somewhere to go. It identified places in the game where the user had the potential to get blocked and ensured we gave them a way out. 
+
+## Features
+
+### Existing Features
+
+* Main Menu
+
+  The main menu allows the user to select from 4 options. They can start the quiz game, read the instructions, look at the leader board or quit. They are prompted to enter an option numbered 1-4. If they enter an invalid option, they will keep being prompted to enter an option until a valid option is entered.
+
+* Start Quiz
+
+  The user is prompted to enter in their name. If they try and proceed without entering their name, they will keep being prompted to enter a valid name. They will then see a welcome message and the first question will be displayed.
+
+* Questions and possible answers
+
+  The user will see a question displayed with a list of possible answers listed from 1-4. The user is prompted to enter 1, 2, 3 or 4. If the user enters an invalid option they will be prompted to try again until a valid option is entered.
+
+* Question Validation
+
+  If the user gets the answer correct, they will see the Correct! message display on screen.
+
+  If the user gets the answer incorrect, they will see the Incorrect! messages display on screen alongside the correct answer.
+
+* Final score
+
+  After the user has answered 10 questions, they will see a final score be displayed with their name.
+
+* Leader board
+
+  Using google sheets the username and score will be exported and saved to the sheet.
+
+* End game function
+
+  The user will be asked if they want to play again. If they enter 'Y' a new game will start. 
+
+  If they enter 'N' they will be shown a goodbye message and the game will be over.
+
+### Future Features
+
+* I would like to implement more styling throughout the application including some graphics.
+* I would like to include more questions and import them from an API or storage in google sheets and then have them pulled in at random so that the same user can play 
+  the game over and over and not get bored and not get too familiar with the answers.
+
