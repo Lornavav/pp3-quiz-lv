@@ -107,7 +107,7 @@ def new_game():
         else:
             print("\nIncorrect! The correct answer is", question["answer"])
 
-    print(f"{USER_NAME} you scored {CORRECT_ANSWERS} out of {len(questions)}.")
+    print(f"\n{USER_NAME} you scored {CORRECT_ANSWERS} / {len(questions)}.")
 
     update_leaderboard()
     game_over()
@@ -124,10 +124,10 @@ def update_leaderboard():
     Update the worksheet with the user name and their final points.
     """
     data = USER_NAME, CORRECT_ANSWERS
-    print("Updating leaderboard...")
+    print("\nUpdating leaderboard...")
     leaderboard_sheet = SHEET.worksheet("main")
     leaderboard_sheet.append_row(data)
-    print("Leaderboard updated successfully.")
+    print("\nLeaderboard updated successfully.")
 
 
 """
@@ -138,18 +138,19 @@ each option and invalid entries.
 
 
 def game_over():
-    play_again = input("Do you want to play again? Enter Y/N: ").lower()
+    play_again = input("\nDo you want to play again? Enter Y/N: ").lower()
 
     while True:
         if play_again not in ["y", "n"]:
             play_again = input(
-                "Not a valid option. Enter Y/N: \n").lower()
+                "\nNot a valid option. Enter Y/N: \n").lower()
             continue
         else:
             if play_again == "y":
+                clear()
                 new_game()
             else:
-                print("Goodbye! Thank you for playing!")
+                print("\nGoodbye! Thank you for playing!")
             break
 
 
