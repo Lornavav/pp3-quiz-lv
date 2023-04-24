@@ -32,3 +32,9 @@ To allow users to enjoy a simple quiz game. They can have as many chances as the
 
 * As a website owner I want the quiz game to contain 10 questions with 4 possible answers to each question. I want 1 question to load at a time. Once a question has been answered the next one should load this should continue until all 10 questions have loaded.
 * As a website owner I want to capture the users name and final score and export the data to a google sheet for storage.
+
+## Design
+
+### Flowchart
+
+![]()
