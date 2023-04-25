@@ -149,8 +149,15 @@ def show_leaderboard():
     using tabulate to help format the data.
     """
     main = SHEET.worksheet("main")
-    row_id = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     data = main.get_all_values()
+
+    def size(dat):
+        return float(dat[1])
+
+    data.sort(key=size, reverse=True)
+
+    row_id = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    
     print(tabulate(data[0:10], headers=["Name", "Score"], 
           tablefmt='fancy_grid', numalign="center", showindex=row_id))
 
