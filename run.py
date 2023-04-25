@@ -139,22 +139,23 @@ each option and invalid entries.
 
 
 def game_over():
-    play_again = input("\nDo you want to play again? Enter Y/N: ").lower()
 
     while True:
-        if play_again not in ["y", "n"]:
-            play_again = input(
-                "\nNot a valid option. Enter Y/N: \n").lower()
-            continue
+        try:
+            play_again = input("\nDo you want to play again? Enter Y/N: ").lower()
+        except ValueError:
+            print("\nInvalid option. Please enter Y/N.\n")
+        if play_again == "y":
+            clear()
+            new_game()
+        elif play_again == "n":
+            clear()
+            print("\nGoodbye! Thank you for playing!\n")
+            print("\n-------------------------------\n")
+            main_menu()
         else:
-            if play_again == "y":
-                clear()
-                new_game()
-            else:
-                clear()
-                print("\nGoodbye! Thank you for playing!\n")
-                print("\n-------------------------------\n")
-                main_menu()
-
+            print("\nInvalid option. Please enter Y/N.\n")
+            game_over()
+     
 
 main_menu()
