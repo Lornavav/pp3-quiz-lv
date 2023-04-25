@@ -28,7 +28,7 @@ wind speed?\n""",
     {
         "question": "\nHow many sides does a dodecahedron have?\n",
         "options": ["12", "24", "14", "20"],
-        "answer": "2"
+        "answer": "12"
     },
     {
         "question": """\nThe Statue of Liberty was a gift to the United States
