@@ -24,13 +24,11 @@ def clear():
     os.system("cls" if os.name == "nt" else "clear")
 
 
-"""
-Function to load main menu, error handling if correct option
-is not selected. Option to quit the game and break out of loop.
-"""
-
-
 def main_menu():
+    """
+    Function to load main menu, error handling if correct option
+    is not selected. Option to quit the game and break out of loop.
+    """
     print("1. Start Quiz")
     print("2. Instructions")
     print("3. Leaderboard")
@@ -61,16 +59,13 @@ def main_menu():
     exit()
 
 
-"""
-Function to run the quiz, includes user name input,
-A for loop to iterate through the questions and options,
-A while loop to catch any incalid enteries, if/else statement
-to match user input with answers and increase score.
-"""
-
-
 def new_game():
-
+    """
+    Function to run the quiz, includes user name input,
+    A for loop to iterate through the questions and options,
+    A while loop to catch any incalid enteries, if/else statement
+    to match user input with answers and increase score.
+    """ 
     global USER_NAME
 
     USER_NAME = input("\nPlease enter your name to start quiz: \n")
@@ -114,15 +109,9 @@ def new_game():
     game_over()
 
 
-"""
-Function to update google sheet with user name and
-score.
-"""
-
-
 def update_leaderboard():
     """
-    Update the worksheet with the user name and their final points.
+    Update google worksheet with the user name and final score.
     """
     data = USER_NAME, CORRECT_ANSWERS
     print("\nUpdating leaderboard...")
@@ -131,18 +120,17 @@ def update_leaderboard():
     print("\nLeaderboard updated successfully.")
 
 
-"""
-Asks the user if they want to play again,
-While loop with nestled if/else statements to handle
-each option and invalid entries.
-"""
-
-
 def game_over():
+    """
+    Asks the user if they want to play again,
+    While loop with nestled if/else statements to handle
+    each option and invalid entries.
+    """
 
     while True:
         try:
-            play_again = input("\nDo you want to play again? Enter Y/N: ").lower()
+            play_again = input(
+                "\nDo you want to play again? Enter Y/N: ").lower()
         except ValueError:
             print("\nInvalid option. Please enter Y/N.\n")
         if play_again == "y":
@@ -156,6 +144,5 @@ def game_over():
         else:
             print("\nInvalid option. Please enter Y/N.\n")
             game_over()
-     
 
 main_menu()
