@@ -15,11 +15,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("quiz-leaderboard")
 
-# main = SHEET.worksheet("main")
-
-# data = main.get_all_values()
-# print(data)
-
 
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
@@ -48,7 +43,7 @@ def main_menu():
                 print("\nInput your answer using option 1, 2, 3, 4.")
                 print("\nBest of luck!")
             elif selection == 3:
-                pass
+                show_leaderboard()
             elif selection == 4:
                 print("\nSorry to see you go! Come back soon!")
                 break
@@ -147,6 +142,17 @@ def game_over():
             game_over()
 
 
+def show_leaderboard():
+    """
+    Function to show top 10 higheset scores,
+    Using google sheets to pull the username and score and
+    using tabulate to help format the data.
+    """
+    main = SHEET.worksheet("main")
+    row_id = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    data = main.get_all_values()
+    print(tabulate(data[0:10], headers=["Name", "Score"], 
+          tablefmt='fancy_grid', numalign="center", showindex=row_id))
 
 
 main_menu()
