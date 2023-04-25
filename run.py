@@ -2,6 +2,7 @@ from questions import questions
 import gspread
 from google.oauth2.service_account import Credentials
 import os
+from tabulate import tabulate
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -65,7 +66,7 @@ def new_game():
     A for loop to iterate through the questions and options,
     A while loop to catch any incalid enteries, if/else statement
     to match user input with answers and increase score.
-    """ 
+    """
     global USER_NAME
 
     USER_NAME = input("\nPlease enter your name to start quiz: \n")
@@ -144,5 +145,8 @@ def game_over():
         else:
             print("\nInvalid option. Please enter Y/N.\n")
             game_over()
+
+
+
 
 main_menu()
