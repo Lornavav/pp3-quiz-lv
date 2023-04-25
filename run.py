@@ -35,6 +35,7 @@ def main_menu():
     print("2. Instructions")
     print("3. Leaderboard")
     print("4. Quit\n")
+    print("-------------------------------")
     while True:
         try:
             selection = int(input("\nEnter option: \n"))
@@ -150,8 +151,10 @@ def game_over():
                 clear()
                 new_game()
             else:
-                print("\nGoodbye! Thank you for playing!")
-            break
+                clear()
+                print("\nGoodbye! Thank you for playing!\n")
+                print("\n-------------------------------\n")
+                main_menu()
 
 
 main_menu()
