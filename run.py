@@ -29,33 +29,40 @@ def main_menu():
     Function to load main menu, error handling if correct option
     is not selected. Option to quit the game and break out of loop.
     """
-    print("1. Start Quiz")
-    print("2. Instructions")
-    print("3. Leaderboard")
-    print("4. Quit\n")
+    print(Fore.MAGENTA + "1.", Fore.YELLOW + "Start Quiz")
+    print(Fore.MAGENTA + "2.", Fore.YELLOW + "Instructions")
+    print(Fore.MAGENTA + "3.", Fore.YELLOW + "Leaderboard")
+    print(Fore.MAGENTA + "4.", Fore.YELLOW + "Quit\n")
     print("-------------------------------")
     while True:
         try:
-            selection = int(input("\nEnter option: \n"))
+            selection = int(input(Fore.MAGENTA + "\nEnter option: \n"))
             if selection == 1:
                 clear()
                 new_game()
                 break
             elif selection == 2:
-                print("\nThe game is simple, read the questions..")
-                print("\nDecide on your answer..")
-                print("\nInput your answer using option 1, 2, 3, 4.")
-                print("\nBest of luck!")
+                print(Fore.WHITE + "-------------------------------")
+                print(Fore.YELLOW + "\nThe game is simple, read the questions..")
+                print(Fore.YELLOW + "\nDecide on your answer..")
+                print(Fore.YELLOW + "\nInput your answer using option 1, 2, 3, 4.")
+                print(Fore.YELLOW + "\nBest of luck!\n")
+                print("-------------------------------")
+                main_menu()
             elif selection == 3:
+                clear()
                 show_leaderboard()
+                print("\n")
+                main_menu()
             elif selection == 4:
-                print("\nSorry to see you go! Come back soon!")
+                print(Fore.WHITE + "-------------------------------")
+                print(Fore.YELLOW + "\nSorry to see you go! Come back soon!")
                 break
             else:
-                print("\nInvalid option. Enter 1-4")
+                print(Fore.RED + "\nInvalid option. Enter 1-4")
                 main_menu()
         except ValueError:
-            print("\nInvalid option. Enter 1-4")
+            print(Fore.RED + "\nInvalid option. Enter 1-4")
     exit()
 
 
@@ -68,29 +75,29 @@ def new_game():
     """
     global USER_NAME
 
-    USER_NAME = input("\nPlease enter your name to start quiz: \n")
+    USER_NAME = input(Fore.YELLOW + "\nPlease enter your name to start quiz: \n")
 
     if USER_NAME == "":
-        print("\nYou must enter your name to begin!")
+        print(Fore.RED + "\nYou must enter your name to begin!")
         new_game()
     else:
-        print(f"\nWelcome {USER_NAME}. Best of luck!\n")
+        print(Fore.MAGENTA + f"\nWelcome {USER_NAME}. Best of luck!\n")
 
     global CORRECT_ANSWERS
 
     CORRECT_ANSWERS = 0
 
     for question in questions:
-        print(question["question"])
+        print(Fore.YELLOW + question["question"])
 
         for i, option in enumerate(question["options"]):
             print(i+1, option)
 
-        user_answer = (input("Enter 1, 2, 3, 4: "))
+        user_answer = (input(Fore.YELLOW + "\nEnter 1, 2, 3, 4: "))
 
         while True:
             if user_answer not in ["1", "2", "3", "4"]:
-                user_answer = (input(
+                user_answer = (input(Fore.RED +
                     "\nYou can only enter 1, 2, 3 or 4. Try again: \n"))
                 continue
             else:
@@ -101,9 +108,10 @@ def new_game():
             CORRECT_ANSWERS += 1
             print(Fore.GREEN + "\nCorrect!")
         else:
-            print(Fore.RED + "\nIncorrect!", Fore.GREEN + "The correct answer is", Fore.GREEN + question["answer"])
+            print(Fore.RED + "\nIncorrect!", Fore.GREEN +
+                  "The correct answer is", Fore.GREEN + question["answer"])
 
-    print(f"\n{USER_NAME} you scored {CORRECT_ANSWERS} / {len(questions)}.")
+    print(Fore.MAGENTA + f"\n{USER_NAME} you scored {CORRECT_ANSWERS} / {len(questions)}.")
 
     update_leaderboard()
     game_over()
@@ -114,10 +122,10 @@ def update_leaderboard():
     Update google worksheet with the user name and final score.
     """
     data = USER_NAME, CORRECT_ANSWERS
-    print("\nUpdating leaderboard...")
+    print(Fore.MAGENTA + "\nUpdating leaderboard...")
     leaderboard_sheet = SHEET.worksheet("main")
     leaderboard_sheet.append_row(data)
-    print("\nLeaderboard updated successfully.")
+    print(Fore.MAGENTA + "\nLeaderboard updated successfully.")
 
 
 def game_over():
@@ -129,20 +137,20 @@ def game_over():
 
     while True:
         try:
-            play_again = input(
+            play_again = input(Fore.YELLOW +
                 "\nDo you want to play again? Enter Y/N: ").lower()
         except ValueError:
-            print("\nInvalid option. Please enter Y/N.\n")
+            print(Fore.RED + "\nInvalid option. Please enter Y/N.\n")
         if play_again == "y":
             clear()
             new_game()
         elif play_again == "n":
             clear()
-            print("\nGoodbye! Thank you for playing!\n")
+            print(Fore.MAGENTA + "\nGoodbye! Thank you for playing!\n")
             print("\n-------------------------------\n")
             main_menu()
         else:
-            print("\nInvalid option. Please enter Y/N.\n")
+            print(Fore.RED + "\nInvalid option. Please enter Y/N.\n")
             game_over()
 
 
@@ -161,8 +169,8 @@ def show_leaderboard():
     data.sort(key=size, reverse=True)
 
     row_id = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    
-    print(tabulate(data[0:10], headers=["Name", "Score"], 
+
+    print(tabulate(data[0:10], headers=["Name", "Score"],
           tablefmt='fancy_grid', numalign="center", showindex=row_id))
 
 
