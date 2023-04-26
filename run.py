@@ -36,14 +36,14 @@ def main_menu():
     Inspiration taken from you YouTube video by Phil Adams
     https://www.youtube.com/watch?v=f3D-w6XMTN8
     """
-    print(Fore.MAGENTA + "1.", Fore.YELLOW + "Start Quiz")
-    print(Fore.MAGENTA + "2.", Fore.YELLOW + "Instructions")
-    print(Fore.MAGENTA + "3.", Fore.YELLOW + "Leaderboard")
-    print(Fore.MAGENTA + "4.", Fore.YELLOW + "Quit\n")
+    print(Fore.CYAN + "1.", Fore.YELLOW + "Start Quiz")
+    print(Fore.CYAN + "2.", Fore.YELLOW + "Instructions")
+    print(Fore.CYAN + "3.", Fore.YELLOW + "Leaderboard")
+    print(Fore.CYAN + "4.", Fore.YELLOW + "Quit\n")
     print("-------------------------------")
     while True:
         try:
-            selection = int(input(Fore.MAGENTA + "\nEnter option: \n"))
+            selection = int(input(Fore.CYAN + "\nEnter option: \n"))
             if selection == 1:
                 clear()
                 new_game()
@@ -125,7 +125,7 @@ def new_game():
             print(Fore.RED + "\nIncorrect!", Fore.GREEN +
                   "The correct answer is", Fore.GREEN + question["answer"])
 
-    print(Fore.MAGENTA +
+    print(Fore.CYAN +
           f"\n{USER_NAME} you scored {CORRECT_ANSWERS} / {len(questions)}.")
 
     update_leaderboard()
@@ -137,10 +137,10 @@ def update_leaderboard():
     Update google worksheet with the user name and final score.
     """
     data = USER_NAME, CORRECT_ANSWERS
-    print(Fore.MAGENTA + "\nUpdating leaderboard...")
+    print(Fore.CYAN + "\nUpdating leaderboard...")
     leaderboard_sheet = SHEET.worksheet("main")
     leaderboard_sheet.append_row(data)
-    print(Fore.MAGENTA + "\nLeaderboard updated successfully.")
+    print(Fore.CYAN + "\nLeaderboard updated successfully.")
 
 
 def game_over():
@@ -162,7 +162,7 @@ def game_over():
             new_game()
         elif play_again == "n":
             clear()
-            print(Fore.MAGENTA + "\nGoodbye! Thank you for playing!\n")
+            print(Fore.CYAN + "\nGoodbye! Thank you for playing!\n")
             print("\n-------------------------------\n")
             main_menu()
         else:
