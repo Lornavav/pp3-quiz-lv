@@ -3,6 +3,10 @@ import gspread
 from google.oauth2.service_account import Credentials
 import os
 from tabulate import tabulate
+import colorama
+
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -95,9 +99,9 @@ def new_game():
         user_input = int(user_answer)
         if question["options"][user_input-1] == question["answer"]:
             CORRECT_ANSWERS += 1
-            print("\nCorrect!")
+            print(Fore.GREEN + "\nCorrect!")
         else:
-            print("\nIncorrect! The correct answer is", question["answer"])
+            print(Fore.RED + "\nIncorrect!", Fore.GREEN + "The correct answer is", Fore.GREEN + question["answer"])
 
     print(f"\n{USER_NAME} you scored {CORRECT_ANSWERS} / {len(questions)}.")
 
