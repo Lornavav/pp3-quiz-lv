@@ -32,9 +32,9 @@ def main_menu():
     """
     Function to load main menu, error handling if correct option
     is not selected. Option to quit the game and break out of loop.
-    
+
     Inspiration taken from you YouTube video by Phil Adams
-    https://www.youtube.com/watch?v=f3D-w6XMTN8    
+    https://www.youtube.com/watch?v=f3D-w6XMTN8
     """
     print(Fore.MAGENTA + "1.", Fore.YELLOW + "Start Quiz")
     print(Fore.MAGENTA + "2.", Fore.YELLOW + "Instructions")
@@ -50,9 +50,11 @@ def main_menu():
                 break
             elif selection == 2:
                 print(Fore.WHITE + "-------------------------------")
-                print(Fore.YELLOW + "\nThe game is simple, read the questions..")
+                print(Fore.YELLOW +
+                      "\nThe game is simple, read the questions..")
                 print(Fore.YELLOW + "\nDecide on your answer..")
-                print(Fore.YELLOW + "\nInput your answer using option 1, 2, 3, 4.")
+                print(Fore.YELLOW +
+                      "\nInput your answer using option 1, 2, 3, 4.")
                 print(Fore.YELLOW + "\nBest of luck!\n")
                 print("-------------------------------")
                 main_menu()
@@ -85,8 +87,8 @@ def new_game():
     """
     global USER_NAME
 
-    USER_NAME = input(Fore.YELLOW + "\nPlease enter your name to start quiz: \n")
-
+    USER_NAME = input(Fore.YELLOW +
+                      "\nPlease enter your name to start quiz: \n")
     if USER_NAME == "":
         print(Fore.RED + "\nYou must enter your name to begin!")
         new_game()
@@ -107,8 +109,10 @@ def new_game():
 
         while True:
             if user_answer not in ["1", "2", "3", "4"]:
-                user_answer = (input(Fore.RED +
-                    "\nYou can only enter 1, 2, 3 or 4. Try again: \n"))
+                user_answer = (input(
+                               Fore.RED +
+                               """\nYou can only enter 1, 2, 3 or 4.
+                               Try again: \n"""))
                 continue
             else:
                 break
@@ -121,7 +125,8 @@ def new_game():
             print(Fore.RED + "\nIncorrect!", Fore.GREEN +
                   "The correct answer is", Fore.GREEN + question["answer"])
 
-    print(Fore.MAGENTA + f"\n{USER_NAME} you scored {CORRECT_ANSWERS} / {len(questions)}.")
+    print(Fore.MAGENTA +
+          f"\n{USER_NAME} you scored {CORRECT_ANSWERS} / {len(questions)}.")
 
     update_leaderboard()
     game_over()
@@ -148,7 +153,8 @@ def game_over():
     while True:
         try:
             play_again = input(Fore.YELLOW +
-                "\nDo you want to play again? Enter Y/N: ").lower()
+                               """\nDo you want to play again?
+                               Enter Y/N: """).lower()
         except ValueError:
             print(Fore.RED + "\nInvalid option. Please enter Y/N.\n")
         if play_again == "y":
@@ -170,7 +176,7 @@ def show_leaderboard():
     Using google sheets to pull the username and score and
     using tabulate to help format the data.
 
-    Advice from classmate Indrek Mannik on how to 
+    Advice from classmate Indrek Mannik on how to
     create this table
     Indrek Mannik
     """
