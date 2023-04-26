@@ -112,7 +112,7 @@ def new_game():
                 user_answer = (input(
                                Fore.RED +
                                """\nYou can only enter 1, 2, 3 or 4.
-            Try again: \n"""))
+Try again: \n"""))
                 continue
             else:
                 break
@@ -154,7 +154,7 @@ def game_over():
         try:
             play_again = input(Fore.YELLOW +
                                """\nDo you want to play again?
-        Enter Y/N: """).lower()
+Enter Y/N: """).lower()
         except ValueError:
             print(Fore.RED + "\nInvalid option. Please enter Y/N.\n")
         if play_again == "y":
