@@ -87,13 +87,16 @@ def new_game():
     """
     global USER_NAME
 
-    USER_NAME = input(Fore.YELLOW +
+    while True:
+        try:
+            USER_NAME = input(Fore.YELLOW +
                       "\nPlease enter your name to start quiz: \n")
-    if USER_NAME == "":
-        print(Fore.RED + "\nYou must enter your name to begin!")
-        new_game()
-    else:
-        print(Fore.CYAN + f"\nWelcome {USER_NAME}. Best of luck!\n")
+        except ValueError:
+            print(Fore.RED + "\nInvalid entry. Name must be 2 - 6 characters")
+        if (len(USER_NAME) >=2 and len(USER_NAME) <= 6):
+            break
+        else:
+            print(Fore.RED + "\nInvalid entry. Name must be 2 - 6 characters")
 
     global CORRECT_ANSWERS
 
