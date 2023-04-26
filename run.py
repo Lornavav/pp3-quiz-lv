@@ -90,11 +90,11 @@ def new_game():
     while True:
         try:
             USER_NAME = input(Fore.CYAN +
-                      "\nPlease enter your name to start quiz: \n")
+                              "\nPlease enter your name to start quiz: \n")
         except ValueError:
             print(Fore.RED + "\nInvalid entry. Name must be 2 - 6 characters")
             print("\n")
-        if (len(USER_NAME) >=2 and len(USER_NAME) <= 6):
+        if (len(USER_NAME) >= 2 and len(USER_NAME) <= 6):
             break
         else:
             print(Fore.RED + "\nInvalid entry. Name must be 2 - 6 characters")
