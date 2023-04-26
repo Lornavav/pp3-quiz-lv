@@ -89,7 +89,7 @@ def new_game():
 
     while True:
         try:
-            USER_NAME = input(Fore.CYAN +
+            USER_NAME = input(Fore.YELLOW +
                               "\nPlease enter your name to start quiz: \n")
         except ValueError:
             print(Fore.RED + "\nInvalid entry. Name must be 2 - 6 characters")
@@ -98,6 +98,8 @@ def new_game():
             break
         else:
             print(Fore.RED + "\nInvalid entry. Name must be 2 - 6 characters")
+    
+    print(Fore.CYAN + f"\nWelcome {USER_NAME}. Best of luck!\n")
 
     global CORRECT_ANSWERS
 
