@@ -21,6 +21,10 @@ SHEET = GSPREAD_CLIENT.open("quiz-leaderboard")
 
 
 def clear():
+    """
+    Function to clear the terminal at
+    certain stages for a better UX.
+    """
     os.system("cls" if os.name == "nt" else "clear")
 
 
@@ -28,6 +32,9 @@ def main_menu():
     """
     Function to load main menu, error handling if correct option
     is not selected. Option to quit the game and break out of loop.
+    
+    Inspiration taken from you YouTube video by Phil Adams
+    https://www.youtube.com/watch?v=f3D-w6XMTN8    
     """
     print(Fore.MAGENTA + "1.", Fore.YELLOW + "Start Quiz")
     print(Fore.MAGENTA + "2.", Fore.YELLOW + "Instructions")
@@ -72,6 +79,9 @@ def new_game():
     A for loop to iterate through the questions and options,
     A while loop to catch any incalid enteries, if/else statement
     to match user input with answers and increase score.
+
+    Inspiration taken from article by Rahul Prasad M.
+    https://medium.com/@rahulmallah785671/creating-an-engaging-quiz-game-with-python-a-step-by-step-guide-ea11bd76f159
     """
     global USER_NAME
 
@@ -159,6 +169,10 @@ def show_leaderboard():
     Function to show top 10 higheset scores,
     Using google sheets to pull the username and score and
     using tabulate to help format the data.
+
+    Advice from classmate Indrek Mannik on how to 
+    create this table
+    Indrek Mannik
     """
     main = SHEET.worksheet("main")
     data = main.get_all_values()
