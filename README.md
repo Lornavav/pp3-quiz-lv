@@ -49,9 +49,16 @@ The flowchart was created and used to map out the user journey. This helped make
 
   The main menu allows the user to select from 4 options. They can start the quiz game, read the instructions, look at the leader board or quit. They are prompted to enter an option numbered 1-4. If they enter an invalid option, they will keep being prompted to enter an option until a valid option is entered.
 
+  ![Main Menu](documentation/images/main_menu.png)
+
 * Start Quiz
 
   The user is prompted to enter in their name. If they try and proceed without entering their name, they will keep being prompted to enter a valid name. They will then see a welcome message and the first question will be displayed.
+
+  ![Start Quiz](documentation/images/user_name.png)
+
+  ![Welcome Message](documentation/images/welcome_message.png)
+
 
 * Questions and possible answers
 
