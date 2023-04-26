@@ -51,6 +51,7 @@ The flowchart was created and used to map out the user journey. This helped make
 
   ![Main Menu](documentation/images/main_menu.png)
 
+
 * Start Quiz
 
   The user is prompted to enter in their name. If they try and proceed without entering their name, they will keep being prompted to enter a valid name. They will then see a welcome message and the first question will be displayed.
@@ -60,9 +61,37 @@ The flowchart was created and used to map out the user journey. This helped make
   ![Welcome Message](documentation/images/welcome_message.png)
 
 
+* Instructions
+
+  The user can choose thia option to view the game instructions. They will be able to continue by pressing another menu option once they are finished with the instructions.
+
+  ![Instructions](documentation/images/instructions.png)
+
+
+* Leader board
+
+  Using google sheets the username and score will be exported and saved to the sheet. This will then display a leaderboard of the top 10 scores and the corresponding user name.
+
+  ![Google Sheet](documentation/images/leaderboard_google_sheet.png)
+
+  ![Display Leaderboard](documentation/images/leaderboard.png)
+
+
+* Quit
+
+  This option gives the users the option to quit from the main menu.
+
+  ![Quit](documentation/images/quit.png)
+
+
 * Questions and possible answers
 
   The user will see a question displayed with a list of possible answers listed from 1-4. The user is prompted to enter 1, 2, 3 or 4. If the user enters an invalid option they will be prompted to try again until a valid option is entered.
+
+  ![First Question](documentation/images/first_question.png)
+
+  ![Invalid input](documentation/images/invalid_input.png)
+
 
 * Question Validation
 
@@ -70,19 +99,26 @@ The flowchart was created and used to map out the user journey. This helped make
 
   If the user gets the answer incorrect, they will see the Incorrect! messages display on screen alongside the correct answer.
 
+  ![Correct Answer](documentation/images/correct_answer.png)
+
+  ![Incorrect Answer](documentation/images/incorrect_answer.png)
+
+
 * Final score
 
   After the user has answered 10 questions, they will see a final score be displayed with their name.
 
-* Leader board
+  ![Final Score](documentation/images/final_score.png)
 
-  Using google sheets the username and score will be exported and saved to the sheet.
 
 * End game function
 
   The user will be asked if they want to play again. If they enter 'Y' a new game will start. 
 
   If they enter 'N' they will be shown a goodbye message and the game will be over.
+
+  ![Goodbye message](documentation/images/goodbye.png)
+
 
 ### Future Features
 
@@ -94,17 +130,22 @@ The flowchart was created and used to map out the user journey. This helped make
 
 ### CI Python Linter Testing
 
-All clear no errors found 
+No errors found on run.py file
 
-#### Add screenshot when all code is complete
+![run.py](documentation/images/ci_python_linter.png)
+
+No errors found on questions.py file
+
+![Questions.py](documentation/images/questions_ci%20python_linter.png)
+
 
 ### Manual testing based on user stories
 
 #### Add table with feature, expect, action, result
 
-### Lighthouse testing
-
 ## Unfixed Bugs
+
+* Not aware of any unfixed bugs at the time of deployment.
 
 ## Deployment
 
