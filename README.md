@@ -1,5 +1,7 @@
 # Quiz App
 
+![Cover Image](documentation/images/cover_image.png)
+
 
 ## Introduction
 This quiz app contains 10 general knowledge multiple choice questions. The user will be given 4 possible answers with each question. All labelled 1-4. If the user gets the correct answer, they will receive a 'Correct' message. If the user gets the answer wrong. The 'Incorrect' message will display along with the correct answer. The user can keep going until they answer all 10 questions. They will receive a score marked out of 10 at the end. Their name and score will be exported to a google sheet.
@@ -27,10 +29,10 @@ To allow users to enjoy a simple quiz game. They can have as many chances as the
 * As a user I want to see an 'Incorrect' message along with the correct answer if I get a quiz question wrong.
 * As a user I want to see my score after I have answered all 10 questions.
 * As a user I want the option to play the game again after completing a game. I want to be able to choose yes or no.
+* As a user I want to a view a leaderboard with the top 10 usernames and scores.
 
 #### As a website owner
 
-* As a website owner I want the quiz game to contain 10 questions with 4 possible answers to each question. I want 1 question to load at a time. Once a question has been answered the next one should load this should continue until all 10 questions have loaded.
 * As a website owner I want to capture the users name and final score and export the data to a google sheet for storage.
 
 ## Design
@@ -140,6 +142,12 @@ No errors found on questions.py file
 
 
 ### Manual testing based on user stories
+
+Mannual testing was carried out on Edge & Chrome browsers using a Windows 10 desktop.
+
+![Mannual Testing](documentation/images/mannual_testing_1.png)
+
+![Mannual Testing 2](documentation/images/mannual_testing_2.png)
 
 #### Add table with feature, expect, action, result
 
