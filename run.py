@@ -98,7 +98,7 @@ def new_game():
             break
         else:
             print(Fore.RED + "\nInvalid entry. Name must be 2 - 6 characters")
-    
+
     print(Fore.CYAN + f"\nWelcome {USER_NAME}. Best of luck!\n")
 
     global CORRECT_ANSWERS
@@ -201,3 +201,4 @@ def show_leaderboard():
 
 
 main_menu()
+
