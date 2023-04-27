@@ -70,9 +70,9 @@ The flowchart was created and used to map out the user journey. This helped make
   ![Instructions](documentation/images/instructions.png)
 
 
-* Leader board
+* Leaderboard
 
-  Using google sheets the username and score will be exported and saved to the sheet. This will then display a leaderboard of the top 10 scores and the corresponding user name. Link to the google sheet is [Here](https://docs.google.com/spreadsheets/d/1Y6Urtkmn0AbIWGVr8WcIsc378A38l-KzNgYdCeWyLI4/edit?usp=sharing)
+  Using google sheets the username and score will be exported and saved to the sheet. This will then display a leaderboard of the top 10 scores and the corresponding username. Link to the google sheet is [Here](https://docs.google.com/spreadsheets/d/1Y6Urtkmn0AbIWGVr8WcIsc378A38l-KzNgYdCeWyLI4/edit?usp=sharing).
 
   ![Google Sheet](documentation/images/leaderboard_google_sheet.png)
 
@@ -143,17 +143,17 @@ No errors found on questions.py file
 
 ### Manual testing based on user stories
 
-* Mannual testing was carried out on Edge & Chrome browsers using a Windows 10 desktop.
+* Manual testing was carried out on Edge & Chrome browsers using a Windows 10 desktop.
 
-![Mannual Testing](documentation/images/mannual_testing_1.png)
+![Manual Testing](documentation/images/mannual_testing_1.png)
 
-![Mannual Testing 2](documentation/images/mannual_testing_2.png)
+![Manual Testing 2](documentation/images/mannual_testing_2.png)
 
 ### Error Handling
 
-Error handling has been implemented where relevent throughtout the application. This prevents the user getting blocked at a step or getting thrown out of the application. It will also help prevent bugs and incorrect data from being entered.
+Error handling has been implemented where relevant throughout the application. This prevents the user getting blocked at a step or getting thrown out of the application. It will also help prevent bugs and incorrect data from being entered.
 
-  * Main Menu - User must enter an potion for 1-4 to proceed. 
+  * Main Menu - User must enter options 1-4 to proceed. 
   
     [Error Main Menu](documentation/images/error_main_menu.png)
 
@@ -161,31 +161,31 @@ Error handling has been implemented where relevent throughtout the application. 
 
     [Error Enter Name](documentation/images/error_enter_name.png)
 
-  * Answering Quiz Questions -  The user must input an option of 1-4 anything outside of this will receive an error. And the while loop will ensure that the user keeps getting asked to input the correct answer before proceeding.
+  * Answering Quiz Questions - The user must input an option of 1-4 anything outside of this will receive an error. And the while loop will ensure that the user keeps getting asked to input the correct answer before proceeding.
 
     [Error Answer Question](documentation/images/error_answer_question.png)
 
-  * End Game - After all the quiz questions have been completed the user has the option to play again. This should be answered using Y/N .lower() has been addedd to this input to accept lower case y/n also. If anything else is entered the user will receive an error.
+  * End Game - After all the quiz questions have been completed the user has the option to play again. This should be answered using Y/N .lower() has been added to this input to accept lower case y/n also. If anything else is entered the user will receive an error.
 
     [Error End Game](documentation/images/error_end_game.png)
 
 ## Unfixed Bugs
 
-* Not aware of any unfixed bugs at the time of deployment. A try/except with nestled if/else statements has beem put in place to catch any errors. 
+* Not aware of any unfixed bugs at the time of deployment. A try/except with nestled if/else statements has been put in place to catch any errors. 
 
 ## Bugs encountered
 
-* Strings being too long for the terminal and receiving an erorr when passing through the linter. This came up for me quite a bit especially with the quiz questions and also when I started to add on hte colorama syntax. When I thought I may have fixed the formatting I would deploy it and some strings were displaying with their blank spaces meaning that the strings were printed to the temrinal making it unreadable.
+* Strings being too long for the terminal and receiving an error when passing through the linter. This came up for me quite a bit especially with the quiz questions and when I started to add on the colorama syntax. When I thought I may have fixed the formatting I would deploy it and some strings were displaying with their blank spaces meaning that the strings were printed to the terminal making it unreadable.
 
-The fix: by using multi line strings with the """ syntax sorted by issue after lots of trial and erorr and moitoring the code through the linter to ensure there were no errors with the way i formatted it.
+The fix: by using multi line strings with the """ syntax sorted by issue after lots of trial and error and monitoring  the code through the linter to ensure there were no errors with the way i formatted it.
 
-* Strange behaviour with the game over function - it was my mentor that reported this issue to me and I could not recreate it myself. The issue was when you see the promt 'Do you want to play again?' at the end of the game, if you typed in N you would see the first quiz question. As memtioned I could not recreate this so I turned to my peers I received feedback from 1 guyt to say he played it 3 times with no issue. And another was getting really inconsistent behaviour. It was him that suggested that i had an unnecessary inout in the function. So I simplified it and also added in the option where they are returned to the main menu if they select N for 'Do you want to play again?'. I am hoping this bug is gone now.
+* Strange behaviour with the game over function - it was my mentor that reported this issue to me, and I could not recreate it myself. The issue was when you see the prompt 'Do you want to play again?' at the end of the game, if you typed in N you would see the first quiz question. As mentioned I could not recreate this so I turned to my peers I received feedback from 1 guy to say he played it 3 times with no issue. And another was getting inconsistent behaviour. It was him that suggested that i had an unnecessary input in the function. So, I simplified it and also added in the option where they are returned to the main menu if they select N for 'Do you want to play again?'. I am hoping this bug is gone now.
 
 ## Deployment
 
 ### Heroku deployment
 
-About mid may through the final product I deploed the app in Heroku to ensure there were no issues. From then I mannually deployed the branch each time I pushed something new. I followed the below steps:
+About mid may through the final product I deployed the app in Heroku to ensure there were no issues. From then I manually deployed the branch each time I pushed something new. I followed the below steps:
 
 * Created an account with Heroku and log in through the [Heroku](https://www.heroku.com/) website.
 * From the dashboard click on the 'New' option and selected 'Create New App.
@@ -198,10 +198,10 @@ About mid may through the final product I deploed the app in Heroku to ensure th
 * Add the Python buildpack first, followed by the ModeJs they must be added in this order.
 * Go to the 'Deploy' tab and under 'Deployment Method' click on 'GitHub'.
 * From the 'Connect to GitHub' section ensure the correct repository is selected and then search for the repository you want to connect to and click 'Connect'.
-* You can choose an automatic deploy or a mannual deploy. I chose a manaul deploy.
+* You can choose an automatic deploy or a manual deploy. I chose a manual deploy.
 * With a manual deploy I made sure the main branch was selected and clicked 'deploy branch'.
 * Once the build is finished there should be a message saying 'Your app was successfully deployed' with a 'View' button.
-* When I click on 'View' this opend the application.
+* When I click on 'View' this opened the application.
 
 
 ### Fork repository
@@ -216,7 +216,33 @@ To create a copy of the repository on your own account, follow the below steps:
 
 ### Languages
 
+* Python
+
+### Python Packages
+ 
+ * Import method used to import questions from questions.py into run.py
+ * [gspread](https://pypi.org/project/gspread/) - This allows the application to communicate with google sheets.
+ * [google.oauth2.service_account](https://google-auth.readthedocs.io/) - This provides the ability to authenticate to Google APIs.
+ * [OS](https://docs.python.org/3/library/os.html) - Used to create clear function to clear terminal at certain points throughout the game.
+ * [Tabulate](https://pypi.org/project/tabulate/) - Used to build leaderboard table.
+ * [Colorama](https://pypi.org/project/colorama/) - Used to add colour to the terminal.
+
 ### Frameworks and Tools
 
+ * [Lucid](https://lucid.app/) - Used to create flowchart.
+ * [Codeanywhere] - IDE used to develop my project.
+ * [GitHub](https://github.com/) - Used to host repository.
+ * [Heroku](https://www.heroku.com/) used to deploy the application using CI [Python Template](https://github.com/Code-Institute-Org/python-essentials-template).
+ * Google Sheets - Used to create the quiz leaderboard to hold username and score.
+ * Google Drive, Google Sheet API and Google Cloud Platform - Used to connect the google sheet to the project.
+ * [CI Python Linter](https://pep8ci.herokuapp.com/#) - Used to verify code to ensure there are no errors.
+
 ## Credits
+
+* My peer Indrek Mannik from my cohort for helping me fix the bug mentioned above in the game over function and also for pointing me in the right direction of for formatting my leaderboard by using Tabulate.
+* Rahul Prasad M [article](https://medium.com/@rahulmallah785671/creating-an-engaging-quiz-game-with-python-a-step-by-step-guide-ea11bd76f159) used for inspiration on creating the quiz with dictionaries.
+* Phil Adams [YouTube video](https://www.youtube.com/watch?v=f3D-w6XMTN8) used for inspiration on creating a menu structure used for the main menu.
+
+
+
 
