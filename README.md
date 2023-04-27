@@ -143,21 +143,52 @@ No errors found on questions.py file
 
 ### Manual testing based on user stories
 
-Mannual testing was carried out on Edge & Chrome browsers using a Windows 10 desktop.
+* Mannual testing was carried out on Edge & Chrome browsers using a Windows 10 desktop.
 
 ![Mannual Testing](documentation/images/mannual_testing_1.png)
 
 ![Mannual Testing 2](documentation/images/mannual_testing_2.png)
 
-#### Add table with feature, expect, action, result
+### Error Handling
+
+Error handling has been implemented where relevent throughtout the application. This prevents the user getting blocked at a step or getting thrown out of the application. It will also help prevent bugs and incorrect data from being entered.
+
+  * Main Menu - User must enter an potion for 1-4 to proceed. 
+  
+    [Error Main Menu](documentation/images/error_main_menu.png)
+
+  * Enter Name - The user must enter a name with a minimum of 2 letters and a maximum of 6. 
+
+    [Error Enter Name](documentation/images/error_enter_name.png)
+
+  * Answering Quiz Questions -  The user must input an option of 1-4 anything outside of this will receive an error. And the while loop will ensure that the user keeps getting asked to input the correct answer before proceeding.
+
+    [Error Answer Question](documentation/images/error_answer_question.png)
+
+  * End Game - After all the quiz questions have been completed the user has the option to play again. This should be answered using Y/N .lower() has been addedd to this input to accept lower case y/n also. If anything else is entered the user will receive an error.
+
+    [Error End Game](documentation/images/error_end_game.png)
 
 ## Unfixed Bugs
 
-* Not aware of any unfixed bugs at the time of deployment.
+* Not aware of any unfixed bugs at the time of deployment. A try/except with nestled if/else statements has beem put in place to catch any errors. 
+
+## Bugs encountered
+
+* Strings being too long for the terminal and receiving an erorr when passing through the linter. This came up for me quite a bit especially with the quiz questions and also when I started to add on hte colorama syntax. When I thought I may have fixed the formatting I would deploy it and some strings were displaying with their blank spaces meaning that the strings were printed to the temrinal making it unreadable.
+
+The fix: by using multi line strings with the """ syntax sorted by issue after lots of trial and erorr and moitoring the code through the linter to ensure there were no errors with the way i formatted it.
+
+* Strange behaviour with the game over function - it was my mentor that reported this issue to me and I could not recreate it myself. The issue was when you see the promt 'Do you want to play again?' at the end of the game, if you typed in N you would see the first quiz question. As memtioned I could not recreate this so I turned to my peers I received feedback from 1 guyt to say he played it 3 times with no issue. And another was getting really inconsistent behaviour. It was him that suggested that i had an unnecessary inout in the function. So I simplified it and also added in the option where they are returned to the main menu if they select N for 'Do you want to play again?'. I am hoping this bug is gone now.
 
 ## Deployment
 
 ### Heroku deployment
+
+About mid may through the final product I deploed the app in Heroku to ensure there were no issues. From then I mannually deployed the branch each time I pushed something new. I followed the below steps:
+
+* Created my account ang log in through the [Heroku](heroku.com) website.
+
 
 ### Fork repository
 
