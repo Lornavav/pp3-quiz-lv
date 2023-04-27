@@ -72,7 +72,7 @@ The flowchart was created and used to map out the user journey. This helped make
 
 * Leader board
 
-  Using google sheets the username and score will be exported and saved to the sheet. This will then display a leaderboard of the top 10 scores and the corresponding user name.
+  Using google sheets the username and score will be exported and saved to the sheet. This will then display a leaderboard of the top 10 scores and the corresponding user name. Link to the google sheet is [Here](https://docs.google.com/spreadsheets/d/1Y6Urtkmn0AbIWGVr8WcIsc378A38l-KzNgYdCeWyLI4/edit?usp=sharing)
 
   ![Google Sheet](documentation/images/leaderboard_google_sheet.png)
 
@@ -187,10 +187,30 @@ The fix: by using multi line strings with the """ syntax sorted by issue after l
 
 About mid may through the final product I deploed the app in Heroku to ensure there were no issues. From then I mannually deployed the branch each time I pushed something new. I followed the below steps:
 
-* Created my account ang log in through the [Heroku](heroku.com) website.
+* Created an account with Heroku and log in through the [Heroku](https://www.heroku.com/) website.
+* From the dashboard click on the 'New' option and selected 'Create New App.
+* Add in an app name and choose a region and click 'Create app'.
+* Click on the 'Settings' tab and from the 'Config Vars' section click 'Reveal Config Vars'
+* From here add in google sheet credentials if applicable.
+* Type the name of the file (creds) into the 'KEY' field and then from the IDE open the creds.json file and copy and paste everything from there into the 'VALUE' field and click 'Add'.
+* Still in the 'Config Vars' section add PORT into the 'KEY' field and 8000 into the 'VALUE' field and click 'Add'.
+* From the buildpacks section click 'Add buildpack'.
+* Add the Python buildpack first, followed by the ModeJs they must be added in this order.
+* Go to the 'Deploy' tab and under 'Deployment Method' click on 'GitHub'.
+* From the 'Connect to GitHub' section ensure the correct repository is selected and then search for the repository you want to connect to and click 'Connect'.
+* You can choose an automatic deploy or a mannual deploy. I chose a manaul deploy.
+* With a manual deploy I made sure the main branch was selected and clicked 'deploy branch'.
+* Once the build is finished there should be a message saying 'Your app was successfully deployed' with a 'View' button.
+* When I click on 'View' this opend the application.
 
 
 ### Fork repository
+
+To create a copy of the repository on your own account, follow the below steps:
+
+* Navigate to [My Repository Page](https://github.com/Lornavav/pp3-quiz-lv).
+* Click on 'Fork' up on the top right of the page.
+* There will now be a copy of the original repository in your Github account.
 
 ## Technologies Used
 
